@@ -17,7 +17,11 @@ export default function Chat() {
       </div>
 
       <form onSubmit={handleSubmit} className='flex gap-2'>
-        <input value={input} onChange={handleInputChange} className='flex-1 bg-transparent rounded border px-2' />
+        <input
+          value={input}
+          onChange={handleInputChange}
+          className='flex-1 bg-transparent rounded border px-2'
+        />
         <button type='submit' className='border px-2 py-1 rounded'>
           Send
         </button>

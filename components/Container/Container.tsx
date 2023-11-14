@@ -71,6 +71,12 @@ export default function Container(props: any) {
                 Home
               </a>
             </Link>
+            {/* Neuer Menüpunkt für die Page-Komponente */}
+            <Link href='/page'>
+              <a className='transition-all cursor-pointer hover:text-primary'>
+                Seite
+              </a>
+            </Link>
           </div>
           <div className='flex flex-row items-center space-x-4'>
             <a
