@@ -20,6 +20,9 @@ dependencies:
   debug:
     specifier: ^4.3.4
     version: 4.3.4
+  eslint:
+    specifier: ^8.53.0
+    version: 8.53.0
   eslint-config-prettier:
     specifier: ^8.5.0
     version: 8.10.0(eslint@8.53.0)
@@ -69,9 +72,6 @@ devDependencies:
   daisyui:
     specifier: ^3.9.4
     version: 3.9.4
-  eslint:
-    specifier: ^8.23.0
-    version: 8.53.0
   eslint-config-next:
     specifier: ^12.3.0
     version: 12.3.4(eslint@8.53.0)(typescript@4.9.5)
