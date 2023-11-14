@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: optional;
+    src: url(/fonts/inter-var-latin.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+
+  #__next {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .capsize::before,
+  .capsize::after {
+    content: '';
+    display: table;
+  }
+
+  .capsize::before {
+    margin-bottom: -0.098em;
+  }
+
+  .capsize::after {
+    margin-top: -0.219em;
+  }
+
+  pre {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  pre::-webkit-scrollbar {
+    display: none;
+  }
+
+  ::-moz-selection {
+    color: #fff;
+    background: #000;
+  }
+
+  .light ::selection,
+  .dark ::selection {
+    color: #fff;
+    background: #000;
+  }
+
+  .dark ::selection {
+    color: #000;
+    background: #fff;
+  }
+
+  html {
+    @apply max-h-screen antialiased;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply p-0 m-0 font-sans;
+  }
+
+  body:after {
+    content: '';
+    position: fixed;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    z-index: -1;
+    @apply bg-white dark:bg-black;
+  }
+}
+
+@layer components {
+  select {
+    @apply w-full px-4 py-2 border border-gray-200 rounded outline-none text-primary bg-gray-1000 bg-opacity-5 hover:bg-opacity-10 focus:border-gray-1000 focus:outline-none focus:ring-0 dark:border-gray-800 dark:bg-white dark:focus:border-gray-600;
+  }
+
+  button:focus,
+  a:focus,
+  input:focus,
+  textarea:focus {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-white dark:ring-blue-500 dark:ring-offset-black;
+  }
+
+  button:active:not(:focus-visible),
+  a:active:not(:focus-visible),
+  button:focus:not(:focus-visible),
+  a:focus:not(:focus-visible),
+  input[type='text'],
+  textarea,
+  input[type='checkbox'] {
+    @apply outline-none ring-0 ring-offset-0;
+  }
+
+  .font-list-heading {
+    @apply font-sans text-lg font-bold text-primary;
+  }
+
+  .tabbed-navigation::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .text-primary {
+    @apply text-gray-1000 dark:text-gray-100;
+  }
+
+  .text-secondary {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+
+  .text-tertiary {
+    @apply text-gray-500 dark:text-gray-400;
+  }
+
+  .text-quaternary {
+    @apply text-gray-400 dark:text-gray-500;
+  }
+
+  .bg-elevated {
+    @apply bg-gray-400 bg-opacity-5 dark:bg-gray-50;
+  }
+
+  .bg-primary {
+    @apply bg-gray-100/60 dark:bg-gray-1000/70;
+  }
+
+  .highlight {
+    @apply bg-black/10 dark:bg-white/[.06];
+  }
+
+  .button-primary-x {
+    @apply flex items-center justify-center flex-none px-4 py-2 space-x-2 text-sm font-semibold leading-none text-gray-700 bg-white border border-gray-400 rounded-md shadow-sm cursor-pointer dark:text-gray-300 hover:text-gray-1000 dark:bg-gray-900 border-opacity-30 dark:border-opacity-30 dark:border-gray-500 dark:hover:text-white hover:border-opacity-50 dark:hover:border-opacity-50 hover:shadow-md;
+  }
+
+  .filter-none {
+    filter: none;
+  }
+
+  .filter-grayscale {
+    filter: grayscale(100%);
+  }
+
+  .filter-saturate {
+    -webkit-filter: brightness(105%) saturate(200%) contrast(1);
+    filter: brightness(105%) saturate(200%) contrast(1);
+  }
+
+  .filter-blur {
+    backdrop-filter: saturate(180%) blur(25px);
+  }
+
+  .highlight-link-hover,
+  .highlight-link {
+    @apply -mx-0.5 rounded-sm bg-opacity-20 px-0.5 text-gray-1000 no-underline dark:bg-opacity-100 dark:text-gray-300;
+  }
+
+  .highlight-link-hover:hover,
+  .highlight-link:hover {
+    @apply bg-yellow-400 bg-opacity-30 dark:bg-yellow-500 dark:bg-opacity-100 dark:text-gray-1000;
+  }
+
+  .blink {
+    animation: blink-animation 1.5s steps(2, start) infinite;
+    -webkit-animation: blink-animation 1.5s steps(2, start) infinite;
+  }
+}
